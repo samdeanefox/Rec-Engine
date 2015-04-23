@@ -1,107 +1,19 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/node',
-1 verbose cli   '/usr/bin/npm',
-1 verbose cli   '-g',
-1 verbose cli   'install',
-1 verbose cli   'express-generator' ]
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'start' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.38
 4 verbose node symlink /usr/bin/node
-5 verbose cache add [ 'express-generator', null ]
-6 verbose cache add name=undefined spec="express-generator" args=["express-generator",null]
-7 verbose parsed url { protocol: null,
-7 verbose parsed url   slashes: null,
-7 verbose parsed url   auth: null,
-7 verbose parsed url   host: null,
-7 verbose parsed url   port: null,
-7 verbose parsed url   hostname: null,
-7 verbose parsed url   hash: null,
-7 verbose parsed url   search: null,
-7 verbose parsed url   query: null,
-7 verbose parsed url   pathname: 'express-generator',
-7 verbose parsed url   path: 'express-generator',
-7 verbose parsed url   href: 'express-generator' }
-8 silly lockFile 198a68d8-express-generator express-generator
-9 verbose lock express-generator /home/student/.npm/198a68d8-express-generator.lock
-10 silly lockFile 198a68d8-express-generator express-generator
-11 silly lockFile 198a68d8-express-generator express-generator
-12 verbose addNamed [ 'express-generator', '' ]
-13 verbose addNamed [ null, '*' ]
-14 silly lockFile bd41e3d3-express-generator express-generator@
-15 verbose lock express-generator@ /home/student/.npm/bd41e3d3-express-generator.lock
-16 silly addNameRange { name: 'express-generator', range: '*', hasData: false }
-17 verbose request where is /express-generator
-18 verbose request registry https://registry.npmjs.org/
-19 verbose request id 6ab609fe9225d9e6
-20 verbose url raw /express-generator
-21 verbose url resolving [ 'https://registry.npmjs.org/', './express-generator' ]
-22 verbose url resolved https://registry.npmjs.org/express-generator
-23 verbose request where is https://registry.npmjs.org/express-generator
-24 info trying registry request attempt 1 at 13:37:56
-25 http GET https://registry.npmjs.org/express-generator
-26 http 200 https://registry.npmjs.org/express-generator
-27 silly registry.get cb [ 200,
-27 silly registry.get   { date: 'Thu, 23 Apr 2015 17:37:56 GMT',
-27 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-27 silly registry.get     etag: '"2OUO4G5540QKWG8HBAVUSGZLW"',
-27 silly registry.get     'content-type': 'application/json',
-27 silly registry.get     'cache-control': 'max-age=60',
-27 silly registry.get     'content-length': '25579',
-27 silly registry.get     'accept-ranges': 'bytes',
-27 silly registry.get     via: '1.1 varnish',
-27 silly registry.get     age: '0',
-27 silly registry.get     'x-served-by': 'cache-iad2136-IAD',
-27 silly registry.get     'x-cache': 'HIT',
-27 silly registry.get     'x-cache-hits': '1',
-27 silly registry.get     'x-timer': 'S1429810676.676583,VS0,VE85',
-27 silly registry.get     vary: 'Accept',
-27 silly registry.get     'keep-alive': 'timeout=10, max=50',
-27 silly registry.get     connection: 'Keep-Alive' } ]
-28 silly addNameRange number 2 { name: 'express-generator', range: '*', hasData: true }
-29 silly addNameRange versions [ 'express-generator',
-29 silly addNameRange   [ '1.0.0',
-29 silly addNameRange     '3.0.0',
-29 silly addNameRange     '4.0.0',
-29 silly addNameRange     '4.2.0',
-29 silly addNameRange     '4.8.0',
-29 silly addNameRange     '4.9.0',
-29 silly addNameRange     '4.10.0',
-29 silly addNameRange     '4.11.0',
-29 silly addNameRange     '4.11.1',
-29 silly addNameRange     '4.11.2',
-29 silly addNameRange     '4.12.0',
-29 silly addNameRange     '4.12.1' ] ]
-30 verbose addNamed [ 'express-generator', '4.12.1' ]
-31 verbose addNamed [ '4.12.1', '4.12.1' ]
-32 silly lockFile 16199c6b-express-generator-4-12-1 express-generator@4.12.1
-33 verbose lock express-generator@4.12.1 /home/student/.npm/16199c6b-express-generator-4-12-1.lock
-34 silly lockFile ae76c194-tor-express-generator-4-12-1-tgz https://registry.npmjs.org/express-generator/-/express-generator-4.12.1.tgz
-35 verbose lock https://registry.npmjs.org/express-generator/-/express-generator-4.12.1.tgz /home/student/.npm/ae76c194-tor-express-generator-4-12-1-tgz.lock
-36 verbose addRemoteTarball [ 'https://registry.npmjs.org/express-generator/-/express-generator-4.12.1.tgz',
-36 verbose addRemoteTarball   '79852114d5fc42b9b8f7690567b155ebdf17a246' ]
-37 info retry fetch attempt 1 at 13:37:56
-38 verbose fetch to= /tmp/npm-2565-fl20JEzX/registry.npmjs.org/express-generator/-/express-generator-4.12.1.tgz
-39 http GET https://registry.npmjs.org/express-generator/-/express-generator-4.12.1.tgz
-40 http 200 https://registry.npmjs.org/express-generator/-/express-generator-4.12.1.tgz
-41 silly lockFile ae76c194-tor-express-generator-4-12-1-tgz https://registry.npmjs.org/express-generator/-/express-generator-4.12.1.tgz
-42 silly lockFile ae76c194-tor-express-generator-4-12-1-tgz https://registry.npmjs.org/express-generator/-/express-generator-4.12.1.tgz
-43 silly lockFile 16199c6b-express-generator-4-12-1 express-generator@4.12.1
-44 silly lockFile 16199c6b-express-generator-4-12-1 express-generator@4.12.1
-45 silly lockFile bd41e3d3-express-generator express-generator@
-46 silly lockFile bd41e3d3-express-generator express-generator@
-47 error Error: EACCES, mkdir '/home/student/.npm/express-generator/4.12.1'
-47 error  { [Error: EACCES, mkdir '/home/student/.npm/express-generator/4.12.1']
-47 error   errno: 3,
-47 error   code: 'EACCES',
-47 error   path: '/home/student/.npm/express-generator/4.12.1' }
-48 error Please try running this command again as root/Administrator.
-49 error System Linux 3.13.0-32-generic
-50 error command "/usr/bin/node" "/usr/bin/npm" "-g" "install" "express-generator"
-51 error cwd /home/student/Rec-Engine
-52 error node -v v0.10.38
-53 error npm -v 1.4.28
-54 error path /home/student/.npm/express-generator/4.12.1
-55 error code EACCES
-56 error errno 3
-57 error stack Error: EACCES, mkdir '/home/student/.npm/express-generator/4.12.1'
-58 verbose exit [ 3, true ]
+5 verbose config Skipping project config: /home/student/.npmrc. (matches userconfig)
+6 error Error: ENOENT, open '/home/student/Rec-Engine/package.json'
+7 error If you need help, you may report this *entire* log,
+7 error including the npm and node versions, at:
+7 error     <http://github.com/npm/npm/issues>
+8 error System Linux 3.13.0-32-generic
+9 error command "/usr/bin/node" "/usr/bin/npm" "start"
+10 error cwd /home/student/Rec-Engine
+11 error node -v v0.10.38
+12 error npm -v 1.4.28
+13 error path /home/student/Rec-Engine/package.json
+14 error code ENOENT
+15 error errno 34
+16 verbose exit [ 34, true ]
