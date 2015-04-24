@@ -1,12 +1,6 @@
 {"business_id": "4PkM6eFLMuEedtmyrhzbxg", 
 	"full_address": "13820 N Tatum Blvd\nScottsdale, AZ 85254", 
-	"hours": {"Monday": {"close": "21:00", "open": "09:00"}, 
-				"Tuesday": {"close": "21:00", "open": "09:00"}, 
-				"Friday": {"close": "21:00", "open": "09:00"}, 
-				"Wednesday": {"close": "21:00", "open": "09:00"}, 
-				"Thursday": {"close": "21:00", "open": "09:00"}, 
-				"Sunday": {"close": "17:00", "open": "11:00"}, 
-				"Saturday": {"close": "18:00", "open": "09:00"}}, 
+	"hours": {"Monday": {"close": "21:00", "open": "09:00"}, "Tuesday": {"close": "21:00", "open": "09:00"}, "Friday": {"close": "21:00", "open": "09:00"}, "Wednesday": {"close": "21:00", "open": "09:00"},"Thursday": {"close": "21:00", "open": "09:00"}, "Sunday": {"close": "17:00", "open": "11:00"}, "Saturday": {"close": "18:00", "open": "09:00"}}, 
 				
 				"open": true, 
 				"categories": ["Shopping", "Home & Garden", "Appliances"], 
@@ -15,7 +9,10 @@
 				"neighborhoods": [], "longitude": -111.978328, "state": "AZ", 
 				"stars": 4.0, "latitude": 33.612506000000003, 
 				"attributes": {"Parking": {"garage": false, "street": false, "validated": false, "lot": true, "valet": false}, "Accepts Credit Cards": true, 
-							"Price Range": 4}, "type": "business"}
+					"Price Range": 4}, 
+
+
+	"type": "business"}
 
 
 {"business_id": "D2irSfSyHdZlsLpvflmFYA", 
