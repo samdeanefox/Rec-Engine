@@ -6,8 +6,12 @@ router.get('/', function(req, res, next) {
   res.render('home', { title: 'Express' });
 });
 
-router.get('/index', function(req, res, next) {
+router.get('/regular', function(req, res, next) {
   res.render('single_circle', { title: 'Express' });
+});
+
+router.get('/advanced', function(req, res, next) {
+  res.render('single_circle2', { title: 'Express' });
 });
 
 router.get('/sample_data', function(req, res, next) {
