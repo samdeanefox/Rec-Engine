@@ -1,29 +1,16 @@
-body {
+
+#single{
+ padding = 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   text-align:center;
-  left: 10%;
-  right: 10%;
- overflow: scroll;
-
   background-color: white;
-}
-
-#content{
-  ##padding: 0 10% 0 10%;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  text-align:center;
-  position: fixed;
-  background-color: white;
-
+ border-width: 0px;
 }
 
 a {
   color: #00B7FF;
 }
 
-body {
-  font: 10px sans-serif;
-}
 
 .axis path,
 .axis line {

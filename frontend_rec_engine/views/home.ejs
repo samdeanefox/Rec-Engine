@@ -14,7 +14,7 @@
 
     <!-- Custom styles for this template -->
     <link href="stylesheets/dashboard.css" rel="stylesheet">
-
+    <link href="stylesheets/style.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -33,12 +33,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="/">Group6 Recommandation Engine</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="/">Dashboard</a></li>
+            <li><a href="aboutus">About Us</a></li>
+		<li><a href="template">template</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -62,17 +63,23 @@
           <h1 class="page-header">Compare Recommandations Regular vs MCL</h1>
 
           <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">first selections without MCL</div>
+            	<div class="col-xs-6 col-sm-6 placeholder">
+		first selections without MCL
+          		<iframe id="single" src="iframe" marginwidth="0" marginheight="0" scrolling="no" width="500" height="500">
+          		</iframe>
+
+		          </div>
             
-            <div class="col-xs-6 col-sm-3 placeholder">
-              put another circle here
+            <div class="col-xs-6 col-sm-6 placeholder">
+              2nd selections using MCL
+              <iframe id="single" src="iframe" marginwidth="0" marginheight="0" scrolling="no" width="500" height="500">
               
-              
+              </iframe>
             </div>
             
           </div>
 
-          <h2 class="sub-header">Top 20 Restaurant Recommandations</h2>
+          <h3 class="sub-header">Top 20 Restaurant Recommandations</h3>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>

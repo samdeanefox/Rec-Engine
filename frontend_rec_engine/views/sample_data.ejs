@@ -1,49 +1,197 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <title>Dashboard Template for Bootstrap</title>
 
-<!--source : http://bl.ocks.org/bbest/2de0e25d4840c68f2db1 -->
-<script src="javascripts/d3.v3.min.js"></script>
-<script src="javascripts/d3.tip.v0.6.3.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
 
-</head>
-<body>
+    <!-- Custom styles for this template -->
+    <link href="stylesheets/dashboard.css" rel="stylesheet">
 
-<h1> Welcome to Recommandation Engine using SVM Master Class Learning </h1>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-<p> This is a final project for CS383 AI class</p>
-<p> Group 6: Yong Liang, Sam Fox
+  <body>
 
-<pre>{
-    'type': 'business',
-    'business_id': (encrypted business id),
-    'name': (business name),
-    'neighborhoods': [(hood names)],
-    'full_address': (localized address),
-    'city': (city),
-    'state': (state),
-    'latitude': latitude,
-    'longitude': longitude,
-    'stars': (star rating, rounded to half-stars),
-    'review_count': review count,
-    'categories': [(localized category names)]
-    'open': True / False (corresponds to closed, not business hours),
-    'hours': {
-        (day_of_week): {
-            'open': (HH:MM),
-            'close': (HH:MM)
-        },
-        ...
-    },
-    'attributes': {
-        (attribute_name): (attribute_value),
-        ...
-    },
-}</pre>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Group6 Recommandation Engine</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Dashboard</a></li>
+            <li><a href="aboutus">About Us</a></li>
+		<li><a href="template">template</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="index">single engine</a></li>
+            <li><a href="sample_data">sameple data</a></li>
+          </ul>
+          
+          
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Sample Restaurant Data</h1>
+
+                      <pre>{
+                'type': 'business',
+                'business_id': (encrypted business id),
+                'name': (business name),
+                'neighborhoods': [(hood names)],
+                'full_address': (localized address),
+                'city': (city),
+                'state': (state),
+                'latitude': latitude,
+                'longitude': longitude,
+                'stars': (star rating, rounded to half-stars),
+                'review_count': review count,
+                'categories': [(localized category names)]
+                'open': True / False (corresponds to closed, not business hours),
+                'hours': {
+                    (day_of_week): {
+                        'open': (HH:MM),
+                        'close': (HH:MM)
+                    },
+                    ...
+                },
+                'attributes': {
+                    (attribute_name): (attribute_value),
+                    ...
+                },
+            }</pre>
+
+<pre>
+{"business_id": "D2irSfSyHdZlsLpvflmFYA", 
+	"full_address": "4372 W Olive Ave\nGlendale, AZ 85302", 
+	"hours": {"Monday": {"close": "22:00", "open": "11:00"}, "Tuesday": {"close": "22:00", "open": "11:00"}, "Friday": {"close": "23:00", "open": "11:00"}, "Wednesday": {"close": "22:00", "open": "11:00"}, "Thursday": {"close": "22:00", "open": "11:00"}, "Sunday": {"close": "22:00", "open": "11:00"}, "Saturday": {"close": "23:00", "open": "11:00"}}, "open": 1, 
+	"categories": ["Japanese", "Restaurants"], 
+	"city": "Glendale", 
+	"review_count": 24, 
+	"name": "K Sushi Bar and Grill", 
+	"neighborhoods": [], "longitude": -112.1539471, "state": "AZ", 
+	"stars": 3.5, "latitude": 33.567546800000002, 
+	"attributes": {"Take-out": 1, "Wi-Fi": "free", 
+				"Good For": {"dessert": 0, "latenight": 0, "lunch": 1, "dinner": 1, "breakfast": 0, "brunch": 0}, 
+				"Caters": 0, 
+				"Noise Level": "average", "Takes Reservations": 0, "Delivery": 0, 
+				"Ambience": {"romantic": 0, "intimate": 0, "touristy": 0, "hipster": 0, "divey": 0, "classy": 0, "trendy": 0, "upscale": 0, "casual": 1}, 
+				"Parking": {"garage": 0, "street": 0, "validated": 0, "lot": 1, "valet": 0}, 
+				"Has TV": 1, 
+				"Outdoor Seating": 0, 
+				"Attire": "casual", 
+				"Alcohol": "full_bar", 
+				"Waiter Service": 1, 
+				"Accepts Credit Cards": 1, 
+				"Good for Kids": 1, 
+				"Good For Groups": 1, 
+				"Price Range": 2}, 
+
+				"type": "business"}
 
 
-</body>
-</html>
+
+
+
+{"business_id": "7aS0iFpab3XHFQrRGMOKXw", 
+	"full_address": "2530 W Happy Valley Rd\nSte 1261\nPhoenix, AZ 85085", 
+	"hours": {"Monday": {"close": "22:00", "open": "10:30"}, "Tuesday": {"close": "22:00", "open": "10:30"}, "Friday": {"close": "22:00", "open": "10:30"}, "Wednesday": {"close": "22:00", "open": "10:30"}, "Thursday": {"close": "22:00", "open": "10:30"}, "Sunday": {"close": "22:00", "open": "10:30"}, "Saturday": {"close": "22:00", "open": "10:30"}}, 
+	"open": 1, 
+	"categories": ["Vegetarian", "American (New)", "Mediterranean", "Restaurants"], 
+	"city": "Phoenix", "review_count": 95, "name": "Pita Jungle", "neighborhoods": [], "longitude": -112.11301400000001, "state": "AZ", 
+	"stars": 3.5, "latitude": 33.713095000000003, 
+	"attributes": {"Take-out": 1, "Wi-Fi": "no", 
+				"Good For": {"dessert": 0, "latenight": 0, "lunch": 1, "dinner": 0, "breakfast": 0, "brunch": 0}, 
+				"Caters": 1, 
+				"Noise Level": "loud", "Takes Reservations": 0, "Has TV": 1, "Delivery": 0, 
+				"Ambience": {"romantic": 0, "intimate": 0, "classy": 0, "hipster": 0, "divey": 0, "touristy": 0, "trendy": 0, "upscale": 0, "casual": 1}, 
+				"Parking": {"garage": 0, "street": 0, "validated": 0, "lot": 1, "valet": 0}, 
+				"Wheelchair Accessible": 0, 
+				"Outdoor Seating": 1, 
+				"Attire": "casual", 
+				"Alcohol": "full_bar", 
+				"Waiter Service": 1, 
+				"Accepts Credit Cards": 1, 
+				"Good for Kids": 1, 
+				"Good For Groups": 1, 
+				"Price Range": 2}, 
+
+				"type": "business"}
+
+
+
+
+{"business_id": "3NaG-C0srSfRgHte7GyySg", 
+	"full_address": "89 Rue de la Commune E\nMontr\u00e9al, QC H2Y 1J1", 
+	"hours": {"Monday": {"close": "22:30", "open": "17:00"}, "Tuesday": {"close": "10:30", "open": "07:30"}, "Friday": {"close": "10:30", "open": "07:30"}, "Wednesday": {"close": "10:30", "open": "07:30"}, "Thursday": {"close": "10:30", "open": "07:30"}, "Sunday": {"close": "22:30", "open": "17:00"}, "Saturday": {"close": "11:30", "open": "07:30"}}, 
+	"open": 1, 
+	"categories": ["Gastropubs", "Restaurants"], 
+	"city": "Montr\u00e9al", 
+	"review_count": 37, 
+	"name": "Taverne Gaspar", 
+	"neighborhoods": [], "longitude": -73.552894600000002, "state": "QC", 
+	"stars": 3.5, "latitude": 45.506013899999999, 
+	"attributes": {"Take-out": 0, "Wi-Fi": "no", 
+				"Good For": {"dessert": 0, "latenight": 0, "lunch": 0, "dinner": 1, "brunch": 0, "breakfast": 0}, 
+				"Caters": 0, 
+				"Noise Level": "average", 
+				"Takes Reservations": 1, 
+				"Delivery": 0, 
+				"Ambience": {"romantic": 0, "intimate": 0, "classy": 0, "hipster": 0, "divey": 0, "touristy": 0, "trendy": 0, "upscale": 0, "casual": 1}, 
+				"Parking": {"garage": 0, "street": 1, "validated": 0, "lot": 0, "valet": 0}, 
+				"Has TV": 1, 
+				"Outdoor Seating": 1, 
+				"Attire": "casual", 
+				"Alcohol": "full_bar", 
+				"Waiter Service": 1, 
+				"Accepts Credit Cards": 1, 
+				"Good for Kids": 0, 
+				"Good For Groups": 1, 
+				"Price Range": 3}, 
+
+				"type": "business"}
+</pre>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  
+
+</body></html>
