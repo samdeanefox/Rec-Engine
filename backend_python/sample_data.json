@@ -1,24 +1,3 @@
-{"business_id": "4PkM6eFLMuEedtmyrhzbxg", 
-	"full_address": "13820 N Tatum Blvd\nScottsdale, AZ 85254", 
-	"hours": {"Monday": {"close": "21:00", "open": "09:00"}, 
-				"Tuesday": {"close": "21:00", "open": "09:00"}, 
-				"Friday": {"close": "21:00", "open": "09:00"}, 
-				"Wednesday": {"close": "21:00", "open": "09:00"}, 
-				"Thursday": {"close": "21:00", "open": "09:00"}, 
-				"Sunday": {"close": "17:00", "open": "11:00"}, 
-				"Saturday": {"close": "18:00", "open": "09:00"}}, 
-				
-				"open": 1, 
-				"categories": ["Shopping", "Home & Garden", "Appliances"], 
-				"city": "Scottsdale", "review_count": 7, 
-				"name": "Spencer's TV & Appliance", 
-				"neighborhoods": [], "longitude": -111.978328, "state": "AZ", 
-				"stars": 4.0, "latitude": 33.612506000000003, 
-				"attributes": {"Parking": {"garage": 0, "street": 0, "validated": 0, "lot": 1, "valet": 0}, "Accepts Credit Cards": 1, 
-							"Price Range": 4}, 
-
-	"type": "business"}
-
 
 {"business_id": "D2irSfSyHdZlsLpvflmFYA", 
 	"full_address": "4372 W Olive Ave\nGlendale, AZ 85302", 
