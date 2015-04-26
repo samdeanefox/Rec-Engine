@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+<!--source : http://bl.ocks.org/bbest/2de0e25d4840c68f2db1 -->
+<script src="javascripts/d3.v3.min.js"></script>
+<script src="javascripts/d3.tip.v0.6.3.js"></script>
+
+</head>
+<body>
+
+<h1> Welcome to Recommandation Engine using SVM Master Class Learning </h1>
+
+<p> This is a final project for CS383 AI class</p>
+<p> Group 6: Yong Liang, Sam Fox
+
+<pre>{
+    'type': 'business',
+    'business_id': (encrypted business id),
+    'name': (business name),
+    'neighborhoods': [(hood names)],
+    'full_address': (localized address),
+    'city': (city),
+    'state': (state),
+    'latitude': latitude,
+    'longitude': longitude,
+    'stars': (star rating, rounded to half-stars),
+    'review_count': review count,
+    'categories': [(localized category names)]
+    'open': True / False (corresponds to closed, not business hours),
+    'hours': {
+        (day_of_week): {
+            'open': (HH:MM),
+            'close': (HH:MM)
+        },
+        ...
+    },
+    'attributes': {
+        (attribute_name): (attribute_value),
+        ...
+    },
+}</pre>
+
+
+</body>
+</html>
