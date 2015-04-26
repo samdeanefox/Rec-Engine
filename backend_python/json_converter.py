@@ -1,9 +1,8 @@
 import json;
 
-data = []
-with open('subset.json') as f:
-    for line in f:
-        data.append(json.loads(line))
-
-
-print data
+def jsonConvert(file_descriptor):
+	data = []
+	with open(file_descriptor) as f:
+	    for line in f:
+	        data.append(json.loads(line))
+	return data
