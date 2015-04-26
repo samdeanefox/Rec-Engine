@@ -1,3 +1,3 @@
-from json_converter import jsonConvert
+from methods import *
 
 print jsonConvert('subset.json')
