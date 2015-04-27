@@ -8,6 +8,10 @@ def jsonConvert(file_descriptor):
 	        data.append(json.loads(line))
 	return data
 
+def toJSON(dict_file):
+	return json.dumps(dict_file, ensure_ascii=False)
+
+
 def getScore(dict,p1,p2):
  
   si={}
@@ -33,7 +37,7 @@ def getScore(dict,p1,p2):
   return r
 
 def topMatches(dict,person,n=5,similarity=getScore):
-	scores=[(similarity(dict,person,other),other)
+	scores=[(other,similarity(dict,person,other))
                        for other in dict if other!=person]
   	scores.sort()
   	scores.reverse()

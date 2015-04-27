@@ -5,6 +5,8 @@ time_start = time.time()
 
 dataset = jsonConvert('newfile.json')
 dictionary = {}
+resultdetails ={}
+
 entries = 0
 tries = 0
 
@@ -19,12 +21,16 @@ for i in dataset:
 	tries = tries + 1
 
 #Calculate score
-print topMatches(dictionary, 'Taipei South', n=1000)
+results = topMatches(dictionary, 'Taipei South', n=10)
+print results 
 
 
+#output result files
+for i in results:
+	resultdetails[i[0]] = dictionary[i[0]]
 
-
-
+fo = open("results.json", "wb")
+fo.write(toJSON(resultdetails));
 
 
 print "Tries: "
