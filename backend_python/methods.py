@@ -39,6 +39,6 @@ def getScore(dict,p1,p2):
 def topMatches(dict,person,n=5,similarity=getScore):
 	scores=[(other,similarity(dict,person,other))
                        for other in dict if other!=person]
-  	scores.sort()
+  	scores.sort(key=lambda x: x[1])
   	scores.reverse()
   	return scores[0:n]
