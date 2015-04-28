@@ -5,6 +5,8 @@ time_start = time.time()
 
 dataset = jsonConvert('newfile.json')
 dictionary = {}
+resultdetails ={}
+
 entries = 0
 tries = 0
 lowerbound = 0.06
@@ -23,39 +25,48 @@ for i in dataset:
 		entries = entries + 1
 	tries = tries + 1
 
-print 'YO\n\n'
-print dictionary
+#Calculate score
+print topMatches(dictionary, 'Taipei South', n=10)
+
+example = 'Bellisario Pizza Shop'
+for i in dictionary:
+	value = supportVector(dictionary, i, example, lowerbound, upperbound)
+	if value > 0:
+		doRecommend.append(i)
+	elif value < 0:
+		dontRecommend.append(i)
+	else:
+		ambiguous.append(i)
+
+print 'Do Recommend: '
+for i in doRecommend:
+	print i
+print '\n\n'
+print 'Dont Recommend: '
+for i in dontRecommend:
+	print i
+print '\n\n'
+print 'Ambiguous: '
+for i in ambiguous:
+	print i
+print '\n\n'
+
+
+
+print "Tries: "
+print tries
+print "Entries: "
+print entries
+print '\nRuntime: ' + str(total_time)
 
 #Calculate score
-#print topMatches(dictionary, 'Hunan Wok Chinese Restaurant', n=10)
-
-#example = 'Bellisario Pizza Shop'
-#for i in dictionary:
-#	value = supportVector(dictionary, i, example, lowerbound, upperbound)
-#	if value > 0:
-#		doRecommend.append(i)
-#	elif value < 0:
-#		dontRecommend.append(i)
-#	else:
-#		ambiguous.append(i)
-#
-#print 'Do Recommend: '
-#for i in doRecommend:
-#	print i
-#print '\n\n'
-#print 'Dont Recommend: '
-#for i in dontRecommend:
-#	print i
-#print '\n\n'
-#print 'Ambiguous: '
-#for i in ambiguous:
-#	print i
-#print '\n\n'
+results = topMatches(dictionary, 'Taipei South', n=10)
+print results 
 
 
+#output result files
+for i in results:
+	resultdetails[i[0]] = dictionary[i[0]]
 
-#print "Tries: "
-#print tries
-#print "Entries: "
-#print entries
-#print '\nRuntime: ' + str(total_time)
+fo = open("results.json", "wb")
+fo.write(toJSON(resultdetails));

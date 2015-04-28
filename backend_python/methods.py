@@ -8,6 +8,10 @@ def jsonConvert(file_descriptor):
 	        data.append(json.loads(line))
 	return data
 
+def toJSON(dict_file):
+	return json.dumps(dict_file, ensure_ascii=False)
+
+
 def getScore(dict,p1,p2):
  
   si={}
@@ -17,7 +21,7 @@ def getScore(dict,p1,p2):
   n=len(si)
   
   if n==0: return 0
-  
+
   sum1=sum([dict[p1][it] for it in si])
   sum2=sum([dict[p2][it] for it in si])
   
@@ -32,10 +36,10 @@ def getScore(dict,p1,p2):
   r=num/den
   return r
 
-def topMatches(dict,r,n=5,similarity=getScore):
-	scores=[(similarity(dict,r,other),other)
-                       for other in dict if other!=r]
-  	scores.sort()
+def topMatches(dict,person,n=5,similarity=getScore):
+	scores=[(other,similarity(dict,person,other))
+                       for other in dict if other!=person]
+  	scores.sort(key=lambda x: x[1])
   	scores.reverse()
   	return scores[0:n]
 
