@@ -32,9 +32,19 @@ def getScore(dict,p1,p2):
   r=num/den
   return r
 
-def topMatches(dict,person,n=5,similarity=getScore):
-	scores=[(similarity(dict,person,other),other)
-                       for other in dict if other!=person]
+def topMatches(dict,r,n=5,similarity=getScore):
+	scores=[(similarity(dict,r,other),other)
+                       for other in dict if other!=r]
   	scores.sort()
   	scores.reverse()
   	return scores[0:n]
+
+def supportVector(dict, restaurant, comparator, lowerbound, upperbound):
+  val = getScore(dict, restaurant, comparator)
+  if val > upperbound:
+    return 1
+  if val < lowerbound:
+    return -1
+  return 0
+
+#def topStarRating():
