@@ -4,7 +4,7 @@ import time
 
 time_start = time.time()
 
-dataset = jsonConvert('subset_list.json')
+dataset = jsonConvert('datasets/subset_list.json')
 dictionary = {}
 
 entries = 0
@@ -63,5 +63,5 @@ print getSummationScore(dictionary, 'Taipei South', 'Cafe Zinho')
 print getSharedCategories(dictionary, 'Taipei South', 'Cafe Zinho')
 
 
-#output result files
+#output result files from toMatch
 outputdata(dictionary,results)
