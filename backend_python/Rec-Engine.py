@@ -25,7 +25,7 @@ for i in dataset:
 		entries = entries + 1
 	tries = tries + 1
 
-#Calculate score
+#Support Vector Strategy
 print topMatches(dictionary, 'Taipei South', n=10)
 
 example = 'Bellisario Pizza Shop'
@@ -37,7 +37,6 @@ for i in dictionary:
 		dontRecommend.append(i)
 	else:
 		ambiguous.append(i)
-
 print 'Do Recommend: '
 for i in doRecommend:
 	print i
@@ -51,17 +50,20 @@ for i in ambiguous:
 	print i
 print '\n\n'
 
-
-
 print "Tries: "
 print tries
 print "Entries: "
 print entries
 print '\nRuntime: ' + str(total_time)
 
-#Calculate score
+#Top matches Strategy
 results = topMatches(dictionary, 'Taipei South', n=10)
 print results 
+
+
+#Summation Strategy
+print getSummationScore(dictionary, 'Taipei South', 'Cafe Zinho')
+print getSharedCategories(dictionary, 'Taipei South', 'Cafe Zinho')
 
 
 #output result files
