@@ -64,4 +64,4 @@ print getSharedCategories(dictionary, 'Taipei South', 'Cafe Zinho')
 
 
 #output result files from toMatch
-outputdata(dictionary,results)
+outputdata(dictionary,results, 'results')

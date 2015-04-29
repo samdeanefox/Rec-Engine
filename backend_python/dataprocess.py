@@ -12,12 +12,12 @@ def jsonConvert(file_descriptor):
 def toJSON(dict_file):
 	return json.dumps(dict_file, ensure_ascii=False)
 
-def outputdata(dict_data,restaurant_list):
+def outputdata(dict_data,restaurant_list, filename):
 	resultdetails ={}	
 	for i in restaurant_list:
 		resultdetails[i[0]] = dict_data[i[0]]
 
-	fo = open("results.json", "wb")
+	fo = open(filename+".json", "wb")
 	fo.write(toJSON(resultdetails));
 
 
