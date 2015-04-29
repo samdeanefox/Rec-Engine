@@ -1,5 +1,8 @@
 import json
+import time
 from math import sqrt
+
+## Timer for running the codes
 
 
 #Similarity Evaluation Methods
