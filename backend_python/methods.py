@@ -1,18 +1,6 @@
 import json
 from math import sqrt
 
-#Data-Handling Methods
-def jsonConvert(file_descriptor):
-	data = []
-	with open(file_descriptor) as f:
-	    for line in f:
-	        data.append(json.loads(line))
-	return data
-
-def toJSON(dict_file):
-	return json.dumps(dict_file, ensure_ascii=False)
-
-
 
 #Similarity Evaluation Methods
 def getPearsonScore(dict,r1,r2):
@@ -39,6 +27,8 @@ def getPearsonScore(dict,r1,r2):
   r=num/den
   return r
 
+
+
 def getSharedCategories(dict, r1, r2):
 
   categories = []
@@ -50,6 +40,8 @@ def getSharedCategories(dict, r1, r2):
           #If both == 1, weight higher than both == 0
           categories.append(item1)
   return categories
+
+
 
 def getSummationScore(dict, r1, r2):
 
@@ -66,7 +58,10 @@ def getSummationScore(dict, r1, r2):
   return similarities
 
 
+
+
 #Output Methods
+#Pearsons
 def topMatches(dict,person,n=5,similarityFunction=getPearsonScore):
 	scores=[(other,similarityFunction(dict,person,other))
                        for other in dict if other!=person]
@@ -74,6 +69,8 @@ def topMatches(dict,person,n=5,similarityFunction=getPearsonScore):
   	scores.reverse()
   	return scores[0:n]
 
+
+#SVM
 def supportVector(dict, restaurant, comparator, lowerbound, upperbound, similarityFunction=getPearsonScore):
   val = similarityFunction(dict, restaurant, comparator)
   if val > upperbound:

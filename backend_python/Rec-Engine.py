@@ -1,11 +1,11 @@
 from methods import *
+from dataprocess import *
 import time
 
 time_start = time.time()
 
-dataset = jsonConvert('newfile.json')
+dataset = jsonConvert('subset_list.json')
 dictionary = {}
-resultdetails ={}
 
 entries = 0
 tries = 0
@@ -24,9 +24,6 @@ for i in dataset:
 		dictionary[i['name']] = i['attributes']['Ambience']
 		entries = entries + 1
 	tries = tries + 1
-
-#Support Vector Strategy
-print topMatches(dictionary, 'Taipei South', n=10)
 
 example = 'Bellisario Pizza Shop'
 for i in dictionary:
@@ -56,7 +53,7 @@ print "Entries: "
 print entries
 print '\nRuntime: ' + str(total_time)
 
-#Top matches Strategy
+#Support Vector Strategy
 results = topMatches(dictionary, 'Taipei South', n=10)
 print results 
 
@@ -67,8 +64,4 @@ print getSharedCategories(dictionary, 'Taipei South', 'Cafe Zinho')
 
 
 #output result files
-for i in results:
-	resultdetails[i[0]] = dictionary[i[0]]
-
-fo = open("results.json", "wb")
-fo.write(toJSON(resultdetails));
+outputdata(dictionary,results)
