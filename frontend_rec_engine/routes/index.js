@@ -30,4 +30,10 @@ router.get('/aboutus', function(req, res, next) {
 });
 
 
+router.post('/show', function(req, res, next) {
+  //need to pull data about a resutatnt and display it
+  
+  res.render('iframe', { title: 'Express' });
+});
+
 module.exports = router;
