@@ -2,10 +2,9 @@ import json
 import time
 from math import sqrt
 
-## Timer for running the codes
-
 
 #Similarity Evaluation Methods
+#Based on method provided in "Programming Collective Intelligence"
 def getPearsonScore(dict,r1,r2):
  
   si={}
@@ -61,6 +60,18 @@ def getSummationScore(dict, r1, r2):
   return similarities
 
 
+#Based on method provided in "Programming Collective Intelligence"
+def getEuclideanScore(dict, r1, r2):
+  similarities = {}
+  for item in dict[r1]:
+    if item in dict[r2]:
+      similarities[item] = 1
+  if len(similarities) == 0:
+    return 0
+
+  sum_of_squares=sum([pow(dict[r1][item]-prefs[r2][item],2)
+                          for item in dict[r1] if item in dict[r2]])
+  return 1/(1+sum_of_squares)
 
 
 #Output Methods
@@ -83,4 +94,12 @@ def supportVector(dict, restaurant, comparator, lowerbound, upperbound, similari
   return 0
 
 
-#def topStarRating():
+def topStarRating(dict):
+  topRestaurant = {}
+  topRating = 0
+  for rest in dict:
+    if dict[rest]['stars'] > topRating:
+      topRating = dict['stars']
+      topRestaurant = rest
+  return dict[rest]
+
