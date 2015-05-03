@@ -21,7 +21,7 @@ def getPearsonScore(dict,r1,r2):
   sum1Sq=sum([pow(dict[r1][it]+1,2) for it in si])
   sum2Sq=sum([pow(dict[r2][it]+1,2) for it in si])
   
-  pSum=sum([dict[r1][it]*dict[r2][it] for it in si])
+  pSum=sum([dict[r1][it]*dict[r2][it]+1 for it in si])
 
   num=pSum-(sum1*sum2/n)
   den=sqrt((sum1Sq-pow(sum1,2)/n)*(sum2Sq-pow(sum2,2)/n))
@@ -62,19 +62,47 @@ def getSummationScore(dict, r1, r2):
 
 #Based on method provided in "Programming Collective Intelligence"
 def getEuclideanScore(dict, r1, r2):
-  similarities = {}
+  similarities = 0
   for item in dict[r1]:
-    if item in dict[r2]:
-      similarities[item] = 1
-  if len(similarities) == 0:
-    return 0
+    if item in  dict[r2]:	
+      if dict[r2][item] == dict[r1][item]:
+        similarities+=1
 
-  sum_of_squares=sum([pow(dict[r1][item]-prefs[r2][item],2)
-                          for item in dict[r1] if item in dict[r2]])
-  return 1/(1+sum_of_squares)
+	#print str(similarities) +'\n '
+  sum_of_squares=pow(len(dict[r1]) - similarities,2)
+  return 1.0/(1.0+sum_of_squares)
+
+#SVM
+def supportVector(dict, restaurant, comparator,upperbound,lowerbound):
+  val = getPearsonScore(dict,restaurant, comparator)
+  
+  if (val > upperbound):
+    return 1
+  if (val < lowerbound):
+    return -1
+  return 0
+
+
 
 
 #Output Methods
+#----------------------------------------------------------------------
+# topstars
+def topStarRating(dict, n=10):
+  scores=[(x,dict[x]) for x in dict]
+  scores.sort(key=lambda y: y[1])
+  scores.reverse()
+  return scores[0:n]
+
+#getEuclideanScore
+def geteuclidean(dict,person,n=5,similarityFunction=getEuclideanScore):
+	scores=[(other,similarityFunction(dict,person,other))
+                       for other in dict if other!=person]
+  	scores.sort(key=lambda x: x[1])
+  	scores.reverse()
+  	return scores[0:n]
+
+
 #Pearsons
 def topMatches(dict,person,n=5,similarityFunction=getPearsonScore):
 	scores=[(other,similarityFunction(dict,person,other))
@@ -83,23 +111,11 @@ def topMatches(dict,person,n=5,similarityFunction=getPearsonScore):
   	scores.reverse()
   	return scores[0:n]
 
-
 #SVM
-def supportVector(dict, restaurant, comparator, lowerbound, upperbound, similarityFunction=getPearsonScore):
-  val = similarityFunction(dict, restaurant, comparator)
-  if val > upperbound:
-    return 1
-  if val < lowerbound:
-    return -1
-  return 0
-
-
-def topStarRating(dict):
-  topRestaurant = {}
-  topRating = 0
-  for rest in dict:
-    if dict[rest]['stars'] > topRating:
-      topRating = dict['stars']
-      topRestaurant = rest
-  return dict[rest]
+def getSVM(dict,person,upperbound,lowerbound,n=5,similarityFunction=supportVector):
+	scores=[(other,similarityFunction(dict,person,other,upperbound,lowerbound))
+                       for other in dict if other!=person]
+  	scores.sort(key=lambda x: x[1])
+  	scores.reverse()
+  	return scores[0:n]
 
