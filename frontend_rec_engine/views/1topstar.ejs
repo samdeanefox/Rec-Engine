@@ -68,12 +68,12 @@
 
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h3  class="page-header">Top Star - Top 20 Restaurant Recommandations</h3>
+          <h3  class="page-header">Top Star - Top 10 Recommandations</h3>
           <div class="table-responsive">
 		
 		<div id="jsonTable"></div>
 		<script>
-		$('#jsonTable').CSVToTable('aster_data.csv', 
+		$('#jsonTable').CSVToTable('output/topstar.csv', 
 		    { 
 		       loadingImage: 'images/loading.gif', 
 		       startLine: 0,
@@ -88,14 +88,14 @@
 	<div class="row placeholders">
             
             <div class="col-xs-6 col-sm-6 placeholder">
-              		Tops Restaurant's Score
-              <iframe id="single" src="iframe" width="420px" height="420px" scrolling="no">
+              		Average Restaurants' Score Distribution 
+              <iframe id="single" src="iframe_topstar" width="420px" height="420px" scrolling="no">
               </iframe>
             </div>
   </div>
 	<div id="CSVTable"></div>
 		<script>
-		$('#CSVTable').CSVToTable('aster_data.csv', 
+		$('#CSVTable').CSVToTable('output/topstar_chart.csv', 
 		    { 
 		       loadingImage: 'images/loading.gif', 
 		       startLine: 0,

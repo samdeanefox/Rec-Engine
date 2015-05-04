@@ -68,12 +68,12 @@
 
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h3 class="page-header">Pearsons Corrolation - Top 20 Restaurant Recommandations</h3>
+          <h3 class="page-header">Pearsons Corrolation - Top 10 Recommandations</h3>
           <div class="table-responsive">
 		
 		<div id="jsonTable"></div>
 		<script>
-		$('#jsonTable').CSVToTable('aster_data.csv', 
+		$('#jsonTable').CSVToTable('output/pearsons.csv', 
 		    { 
 		       loadingImage: 'images/loading.gif', 
 		       startLine: 0,
@@ -88,8 +88,8 @@
 	<div class="row placeholders">
             
             <div class="col-xs-6 col-sm-6 placeholder">
-              first selections without MCL
-              <iframe id="single" src="iframe" width="500px" height="500px" scrolling="no">
+              		Average Restaurants' Score Distribution 
+              <iframe id="single" src="iframe_pearsons" width="420px" height="420px" scrolling="no">
               </iframe>
             </div>
             
@@ -97,7 +97,7 @@
 
 	<div id="CSVTable"></div>
 		<script>
-		$('#CSVTable').CSVToTable('aster_data.csv', 
+		$('#CSVTable').CSVToTable('output/pearsons_chart.csv', 
 		    { 
 		       loadingImage: 'images/loading.gif', 
 		       startLine: 0,

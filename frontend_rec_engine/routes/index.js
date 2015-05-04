@@ -21,9 +21,19 @@ router.get('/aboutus', function(req, res, next) {
 });
 
 
-router.get('/iframe', function(req, res, next) {
-  res.render('iframe', { title: 'Express' });
+router.get('/iframe_topstar', function(req, res, next) {
+  res.render('frames/iframe_topstar', { title: 'Express' });
 });
+router.get('/iframe_euclidean', function(req, res, next) {
+  res.render('frames/iframe_euclidean', { title: 'Express' });
+});
+router.get('/iframe_pearsons', function(req, res, next) {
+  res.render('frames/iframe_pearsons', { title: 'Express' });
+});
+router.get('/iframe_SVM', function(req, res, next) {
+  res.render('frames/iframe_SVM', { title: 'Express' });
+});
+
 
 router.get('/topstar', function(req, res, next) {
   res.render('1topstar', { title: 'Express' });
