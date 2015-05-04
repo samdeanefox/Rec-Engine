@@ -9,7 +9,7 @@ var pie = d3.layout.pie()
 
 var tip = d3.tip()
   .attr('class', 'd3-tip')
-  .offset([0, 0])
+  .offset([50, 0])
   .html(function(d) {
     return d.data.label + ": <span style='color:orangered'>" + d.data.score + "</span>";
   });
@@ -32,7 +32,7 @@ var svg = d3.select("body").append("svg")
 
 svg.call(tip);
 
-d3.csv('aster_data.csv', function(error, data) {
+d3.csv('output/default_chart.csv', function(error, data) {
 
   data.forEach(function(d) {
     d.id     =  d.id;

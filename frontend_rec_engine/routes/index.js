@@ -20,7 +20,9 @@ router.get('/aboutus', function(req, res, next) {
   res.render('aboutus', { title: 'Express' });
 });
 
-
+router.get('/iframe', function(req, res, next) {
+  res.render('frames/iframe', { title: 'Express' });
+});
 router.get('/iframe_topstar', function(req, res, next) {
   res.render('frames/iframe_topstar', { title: 'Express' });
 });

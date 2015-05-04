@@ -9,7 +9,7 @@ var pie = d3.layout.pie()
 
 var tip = d3.tip()
   .attr('class', 'd3-tip')
-  .offset([0, 0])
+  .offset([50, 0])
   .html(function(d) {
     return d.data.label + ": <span style='color:orangered'>" + d.data.score + "</span>";
   });
