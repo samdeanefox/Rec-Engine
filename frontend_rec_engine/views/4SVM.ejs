@@ -8,6 +8,11 @@
 
     <title>Recommendation Engine with SVM and MCL</title>
 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="//jquerycsvtotable.googlecode.com/files/jquery.csvToTable.js"></script>
+
     <!-- Bootstrap core CSS -->
     <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
 
@@ -52,31 +57,29 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="/">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="regular">Regular Engine</a></li>
-	    <li><a href="advanced">Advanced Engine</a></li>
-            <li><a href="sample_data">Sample Data</a></li>
+            <li><a href="/topstar">TopStar Engine</a></li>
+	    <li><a href="/euclidean">Euclidean Distance Engine</a></li>
+            <li><a href="/pearsons">Pearsons Corrolation Engine</a></li>
+	    <li><a href="/SVM">SVM Engine</a></li>
+            <li><a href="/sample_data">Sample Data</a></li>
           </ul>
         </div>
 
+
+
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Recommendation based on only Rating</h1>
-
-
-          <h3 class="sub-header">Top 20 Restaurant Recommandations</h3>
+          <h3 class="page-header">SVM - Top 20 Restaurant Recommandations</h3>
           <div class="table-responsive">
-		<div id="CSVTable"></div>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="//jquerycsvtotable.googlecode.com/files/jquery.csvToTable.js"></script>
 		
-		<div id="CSVTable"></div>
+		<div id="jsonTable"></div>
 		<script>
-		$('#CSVTable').CSVToTable('aster_data.csv', 
+		$('#jsonTable').CSVToTable('aster_data.csv', 
 		    { 
 		       loadingImage: 'images/loading.gif', 
 		       startLine: 0,
 		    }
 		).bind("loadComplete",function() { 
-		    $('#CSVTable').find('TABLE').tablesorter();
+		    $('#jsonTable').find('TABLE').tablesorter();
 		});;
 		</script>
 
@@ -91,6 +94,18 @@
             </div>
             
           </div>
+
+	<div id="CSVTable"></div>
+		<script>
+		$('#CSVTable').CSVToTable('aster_data.csv', 
+		    { 
+		       loadingImage: 'images/loading.gif', 
+		       startLine: 0,
+		    }
+		).bind("loadComplete",function() { 
+		    $('#CSVTable').find('TABLE').tablesorter();
+		});;
+		</script>	
 
 
         </div>

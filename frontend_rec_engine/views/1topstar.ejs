@@ -8,25 +8,22 @@
 
     <title>Recommendation Engine with SVM and MCL</title>
 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="//jquerycsvtotable.googlecode.com/files/jquery.csvToTable.js"></script>
+
     <!-- Bootstrap core CSS -->
     <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="stylesheets/dashboard.css" rel="stylesheet">
-	<link href="stylesheets/style.css" rel="stylesheet">
-
-    <!--source : http://bl.ocks.org/bbest/2de0e25d4840c68f2db1 -->
-<script src="javascripts/d3.v3.min.js"></script>
-<script src="javascripts/d3.tip.v0.6.3.js"></script>
-
+    <link href="stylesheets/style.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-
-
   </head>
 
   <body>
@@ -40,12 +37,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-		<a class="navbar-brand" href="/">Group6 Recommendation Engine</a>
+          <a class="navbar-brand" href="/">Group6 Recommendation Engine</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/">Dashboard</a></li>
-            <li><a href="/aboutus">About Us</a></li>
+            <li><a href="aboutus">About Us</a></li>
 		<li><a href="template">template</a></li>
           </ul>
           <form class="navbar-form navbar-right">
@@ -66,36 +63,49 @@
 	    <li><a href="/SVM">SVM Engine</a></li>
             <li><a href="/sample_data">Sample Data</a></li>
           </ul>
-          
-          
         </div>
+
+
+
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-              <h3 class="page-header"> Recommandation Engine using Difference Scoring Systems </h3>
-
-              <p> This is a final project for CS383 AI class
- 		<br>Group 6: Yong Liang, Sam Fox
-		<br>
-		<br> This webpage is created with Node.js Express with Bootstrap and D3 implementation
-		<br> The query/data processing is through Python
-		<br> The Dataset a json file from Yelp! 
-		<hr>
-		<b>Goals from this project:</b>
-		<br> - Compare difference recommendation scoring systems
-		<br> <a href="https://docs.google.com/document/d/1vqG_RqhbBbI843v2Z9G0k1RDPwHGLS1W0qP_L39VWYk/edit"> Full research paper here</a>
+          <h3  class="page-header">Top Star - Top 20 Restaurant Recommandations</h3>
+          <div class="table-responsive">
 		
-		<br>
-		<br><b>On the left menu</b>
-		<ul style="list-style-type:circle">
+		<div id="jsonTable"></div>
+		<script>
+		$('#jsonTable').CSVToTable('aster_data.csv', 
+		    { 
+		       loadingImage: 'images/loading.gif', 
+		       startLine: 0,
+		    }
+		).bind("loadComplete",function() { 
+		    $('#jsonTable').find('TABLE').tablesorter();
+		});;
+		</script>
 
-           <li><a href="/topstar">TopStar - Simple score based on star rating</a></li>
-	    <li><a href="/euclidean">Euclidean Distance - Ambience difference ratio score </a></li>
-            <li><a href="/pearsons">Pearsons Corrolation - Corrolation score based on simularities</a></li>
-	    <li><a href="/SVM">SVM Engine - Categorize 1 and 0 for recommendations</a></li>
-            <li><a href="/sample_data">Sample Data - Display data format and sample extract</a></li>
+		<hr>
 
-		</ul>
-		</p>
- 
+	<div class="row placeholders">
+            
+            <div class="col-xs-6 col-sm-6 placeholder">
+              		Tops Restaurant's Score
+              <iframe id="single" src="iframe" width="420px" height="420px" scrolling="no">
+              </iframe>
+            </div>
+  </div>
+	<div id="CSVTable"></div>
+		<script>
+		$('#CSVTable').CSVToTable('aster_data.csv', 
+		    { 
+		       loadingImage: 'images/loading.gif', 
+		       startLine: 0,
+		    }
+		).bind("loadComplete",function() { 
+		    $('#CSVTable').find('TABLE').tablesorter();
+		});;
+		</script>	
+
+
         </div>
       </div>
     </div>

@@ -17,8 +17,10 @@ def outputdata(dict_data,restaurant_list, filename):
 	for i in restaurant_list:
 		resultdetails[i[0]] = dict_data[i[0]]
 
-	fo = open(filename+".json", "wb")
-	fo.write(toJSON(resultdetails));
+	fo = open("output/"+filename+".json", "wb")
+
+# change just the score
+	fo.write(toJSON(restaurant_list));
 
 
 # need one for to csv?
