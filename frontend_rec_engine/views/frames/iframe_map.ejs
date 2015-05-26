@@ -4,6 +4,23 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMeubOZebVEVGGfnv9t2pB0pSvAP3tf7k">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: { lat: -34.397, lng: 150.644},
+          zoom: 8
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+
 </head>
 <body>
 
@@ -11,6 +28,12 @@
 <script src="javascripts/d3.tip.v0.6.3.js"></script>
 
 <script src="javascripts/draw.js" ></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?client=YOUR_CLIENT_ID&v=3.19"></script>
+<div id="map-canvas"></div>
+
+
+
 
 </body>
 </html>
