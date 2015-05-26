@@ -36,6 +36,10 @@ router.get('/iframe_SVM', function(req, res, next) {
   res.render('frames/iframe_SVM', { title: 'Express' });
 });
 
+router.get('/iframe_map', function(req, res, next) {
+  res.render('frames/iframe_map', { title: 'Express' });
+});
+
 
 router.get('/topstar', function(req, res, next) {
   res.render('1topstar', { title: 'Express' });
